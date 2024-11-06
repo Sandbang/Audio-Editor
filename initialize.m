@@ -3,7 +3,7 @@ classdef initialize < handle
         fig
         gridLayout
         axes
-        buttons
+        selectLoad
     end
     methods
         %initializes the UI
@@ -30,7 +30,7 @@ classdef initialize < handle
             ylabel(app.axes, 'Pitch')
             zlabel(app.axes, 'Z')
 
-            app.buttons = buttons( app.gridLayout );
+            app.selectLoad = selectLoad( app.gridLayout );
  
         end
     end
