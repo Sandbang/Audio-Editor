@@ -3,11 +3,10 @@ classdef initialize < handle
         fig
         gridLayout
         axes
-        selectLoad
     end
     methods
         %initializes the UI
-        function init(app)
+        function init(app, globProp)
             %create canvas
             app.fig = uifigure;
             app.fig.Position = [100 100 1920 1080];
@@ -30,9 +29,8 @@ classdef initialize < handle
             ylabel(app.axes, 'Pitch')
             zlabel(app.axes, 'Z')
 
-            app.selectLoad = selectLoad( app.gridLayout );
- 
         end
+        
     end
 
 
@@ -42,8 +40,8 @@ classdef initialize < handle
     %code for calling and deleting
     methods
         %calls code to create canvas upon app start
-        function app = initialize
-            init(app)
+        function app = initialize(globProp)
+            init(app, globProp)
         end
         %removes the app and deletes app.fig
         function delete(app)
